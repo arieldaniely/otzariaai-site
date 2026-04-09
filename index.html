@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OtzariaAI | חיפוש חכם לספרייה תורנית</title>
+    <title>OtzariaAI | חיפוש תורני מקומי</title>
     <meta
       name="description"
-      content="OtzariaAI הוא אתר הבית של מנוע החיפוש הסמנטי המקומי לספרייה תורנית: חיפוש לפי משמעות, מסננים, השלמה אוטומטית, ותהליך הורדה פשוט דרך GitHub Releases."
+      content="OtzariaAI הוא מנוע חיפוש תורני מקומי. האתר ממוקד במסך אחד ברור, עם חלון הורדות נפרד לתוכנה ולמסדי הנתונים."
     />
-    <meta name="theme-color" content="#0f2742" />
+    <meta name="theme-color" content="#07090d" />
     <meta property="og:title" content="OtzariaAI" />
     <meta
       property="og:description"
-      content="מנוע חיפוש סמנטי מקומי לספרייה תורנית, עם חיפוש לפי משמעות, עבודה מקומית ותהליך הורדה פשוט."
+      content="חיפוש תורני מקומי, עם דף ממוקד וחלון הורדות נפרד לתוכנה ול-DB."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arieldaniely.github.io/otzariaai-site/" />
@@ -21,355 +21,417 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-glow page-glow-one" aria-hidden="true"></div>
-    <div class="page-glow page-glow-two" aria-hidden="true"></div>
+    <div class="page-shell">
+      <div class="page-orb orb-one" aria-hidden="true"></div>
+      <div class="page-orb orb-two" aria-hidden="true"></div>
+      <div class="page-noise" aria-hidden="true"></div>
 
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="עמוד הבית של OtzariaAI">
-        <img src="assets/brand-mark.png" alt="" />
-        <span>OtzariaAI</span>
-      </a>
+      <header class="topbar" id="top">
+        <div class="topbar-inner">
+          <a class="brand" href="#top" aria-label="חזרה לראש הדף">
+            <img src="assets/brand-mark.png" alt="" />
+            <span>OtzariaAI</span>
+          </a>
 
-      <nav class="topnav" aria-label="ניווט ראשי">
-        <a href="#features">יכולות</a>
-        <a href="#gallery">תמונות</a>
-        <a href="#download">הורדה</a>
-        <a href="#faq">שאלות</a>
-        <a href="https://github.com/arieldaniely/otzariaAI" target="_blank" rel="noreferrer">GitHub</a>
-      </nav>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="פתיחת תפריט"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-      <a
-        class="nav-cta"
-        href="https://github.com/arieldaniely/otzariaAI/releases"
-        target="_blank"
-        rel="noreferrer"
-      >
-        להורדה
-      </a>
-    </header>
+          <div class="nav-shell" id="site-nav">
+            <nav class="topnav" aria-label="ניווט ראשי">
+              <a href="#features">יכולות</a>
+              <a href="#screens">מסכים</a>
+              <a href="#start">התחלה</a>
+              <a href="#faq">שאלות</a>
+            </nav>
 
-    <main id="top">
-      <section class="hero section-shell reveal">
-        <div class="hero-copy">
-          <p class="eyebrow">חיפוש תורני חכם. מקומי. בלי רעש.</p>
-          <h1>
-            OtzariaAI מביא חיפוש סמנטי לספרייה תורנית,
-            <span>כך שאפשר למצוא משמעות ולא רק התאמה מילולית.</span>
-          </h1>
-          <p class="hero-text">
-            המערכת משלבת חיפוש וקטורי, אינדקס מקומי, מסננים לפי ספרים וקטגוריות,
-            השלמה אוטומטית, הצעות תיקון איות והצגת הקשר רחב לכל תוצאה. הכל בממשק
-            ידידותי שעובד מקומית ומתאים במיוחד לשימוש יומיומי.
-          </p>
-
-          <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href="https://github.com/arieldaniely/otzariaAI/releases"
-              target="_blank"
-              rel="noreferrer"
-            >
-              צפייה בהורדות
-            </a>
-            <a
-              class="button button-secondary"
-              href="https://github.com/arieldaniely/otzariaAI"
-              target="_blank"
-              rel="noreferrer"
-            >
-              מאגר הקוד
-            </a>
-          </div>
-
-          <ul class="hero-pills" aria-label="יתרונות מרכזיים">
-            <li>עבודה מקומית</li>
-            <li>חיפוש לפי משמעות</li>
-            <li>סינון לפי ספרים</li>
-            <li>מותאם ל־Windows</li>
-          </ul>
-        </div>
-
-        <div class="hero-stage">
-          <div class="stage-card stage-card-main">
-            <div class="stage-caption">הממשק בפעולה</div>
-            <img
-              src="assets/ui-home-live.png"
-              alt="צילום מסך של מנוע החיפוש OtzariaAI"
-            />
-          </div>
-          <div class="stage-card stage-card-note">
-            <strong>ללא תלות בענן</strong>
-            <span>האינדקס, התצוגה והחיפוש רצים מקומית אצלך.</span>
-          </div>
-          <div class="stage-card stage-card-note secondary">
-            <strong>מוכן לעבודה תורנית</strong>
-            <span>חיפוש, הקשר, עץ ספרים ומסננים במקום אחד.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell intro reveal">
-        <div class="section-heading">
-          <p class="eyebrow">למי זה מתאים</p>
-          <h2>לומדים, חוקרים ומפתחים שרוצים לעבוד עם הספרייה בצורה חכמה ומהירה</h2>
-        </div>
-
-        <div class="intro-grid">
-          <article class="info-panel">
-            <h3>מה מיוחד כאן?</h3>
-            <p>
-              OtzariaAI לא מסתפק בחיפוש מילים. הוא משלב שכבת משמעות, חיפוש טקסטואלי,
-              נרמול עברית ומנגנוני עזר כדי להגיע לתוצאות רלוונטיות יותר גם כשהשאילתה
-              לא מנוסחת בדיוק כמו המקור.
-            </p>
-          </article>
-          <article class="info-panel">
-            <h3>איך עובדים?</h3>
-            <p>
-              מורידים, מחברים מסד נתונים מתאים, ובפעם הראשונה המערכת בונה אינדקס
-              מקומי. מכאן והלאה אפשר לחפש, לסנן ולעבור להקשרים מלאים במהירות.
-            </p>
-          </article>
-          <article class="info-panel accent-panel">
-            <h3>הפצה פשוטה</h3>
-            <p>
-              האתר מרכז את המידע, התמונות וקישורי ההורדה. קבצי ההפצה עצמם זמינים
-              דרך GitHub Releases של הפרויקט הראשי.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="features" class="section-shell reveal">
-        <div class="section-heading">
-          <p class="eyebrow">יכולות עיקריות</p>
-          <h2>כלים שימושיים לעבודה אמיתית עם טקסטים תורניים</h2>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="feature-index">01</span>
-            <h3>חיפוש סמנטי והיברידי</h3>
-            <p>
-              שילוב בין FAISS לחיפוש טקסטואלי ב־SQLite FTS כדי לאתר תוצאות לפי
-              משמעות וגם לפי התאמה ישירה.
-            </p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-index">02</span>
-            <h3>עבודה מקומית</h3>
-            <p>
-              מסד הנתונים, המטמון והאינדקס נשמרים אצלך. אין צורך להעלות תכנים לשירות
-              חיצוני כדי להשתמש במערכת.
-            </p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-index">03</span>
-            <h3>תצוגת הקשר וספרייה</h3>
-            <p>
-              מעבר מהיר בין תוצאות, עץ ספרים, מסננים לפי ספרים וטעינת קטעי הקשר רחבים
-              סביב כל תוצאה.
-            </p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-index">04</span>
-            <h3>חוויית חיפוש משופרת</h3>
-            <p>
-              השלמה אוטומטית, תיקון איות, הרחבת מונחים ונרמול עברית עוזרים להגיע
-              לתוצאה מדויקת גם משאילתות חלקיות.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="gallery" class="section-shell reveal">
-        <div class="section-heading">
-          <p class="eyebrow">תמונות מסך</p>
-          <h2>כך נראה המוצר לפני ואחרי הטעינה</h2>
-        </div>
-
-        <div class="gallery-layout">
-          <div class="gallery-controls" role="tablist" aria-label="בחירת צילום מסך">
-            <button
-              class="gallery-button is-active"
-              type="button"
-              data-target="live"
-              role="tab"
-              aria-selected="true"
-            >
-              מסך חיפוש פעיל
-            </button>
-            <button
-              class="gallery-button"
-              type="button"
-              data-target="welcome"
-              role="tab"
-              aria-selected="false"
-            >
-              מסך פתיחה
-            </button>
-          </div>
-
-          <div class="gallery-frame">
-            <figure class="gallery-shot is-active" data-shot="live">
-              <img src="assets/ui-home-live.png" alt="מסך חיפוש פעיל של OtzariaAI" />
-              <figcaption>עמוד החיפוש לאחר טעינת המערכת והנתונים.</figcaption>
-            </figure>
-
-            <figure class="gallery-shot" data-shot="welcome">
-              <img src="assets/ui-home.png" alt="מסך פתיחה של OtzariaAI" />
-              <figcaption>מסך פתיחה נקי עם קריאה ברורה להגדרת המערכת.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section id="download" class="section-shell reveal">
-        <div class="section-heading">
-          <p class="eyebrow">הורדה והתחלה</p>
-          <h2>שלושה צעדים ואתם בפנים</h2>
-        </div>
-
-        <div class="download-grid">
-          <div class="steps-panel">
-            <article class="step-card">
-              <span class="step-index">1</span>
-              <div>
-                <h3>הורידו גרסה</h3>
-                <p>
-                  היכנסו ל־GitHub Releases של הפרויקט ובחרו את קובץ ההפצה המתאים לכם.
-                </p>
-              </div>
-            </article>
-            <article class="step-card">
-              <span class="step-index">2</span>
-              <div>
-                <h3>חברו מסד נתונים</h3>
-                <p>
-                  אפשר לעבוד עם מסדי הנתונים של אוצריא או זית, ולהגדיר את הנתיב דרך
-                  הממשק.
-                </p>
-              </div>
-            </article>
-            <article class="step-card">
-              <span class="step-index">3</span>
-              <div>
-                <h3>התחילו לחפש</h3>
-                <p>
-                  לאחר טעינת המודל ובניית האינדקס המקומי, המערכת מוכנה לחיפוש, סינון
-                  וניווט בהקשרים.
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <aside class="requirements-panel">
-            <h3>דרישות והערות</h3>
-            <ul>
-              <li>Windows מומלץ להרצה הנוכחית.</li>
-              <li>Python 3.10 ומעלה מתאים להרצה מהקוד.</li>
-              <li>חיבור אינטרנט נדרש רק אם רוצים להוריד מודל או מסד נתונים.</li>
-              <li>הבנייה הראשונה של האינדקס עשויה לקחת זמן.</li>
-            </ul>
-
-            <div class="requirements-actions">
+            <div class="topbar-actions">
               <a
-                class="button button-primary"
-                href="https://github.com/arieldaniely/otzariaAI/releases"
+                class="chip-link"
+                href="https://github.com/arieldaniely/otzariaAI"
                 target="_blank"
                 rel="noreferrer"
               >
-                לעמוד ההורדות
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2a10 10 0 0 0-3.162 19.49c.5.092.684-.217.684-.482 0-.237-.009-.866-.014-1.7-2.782.604-3.369-1.342-3.369-1.342-.455-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.07 1.532 1.031 1.532 1.031.892 1.53 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.338-2.221-.253-4.555-1.11-4.555-4.942 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.027 1.592 1.027 2.683 0 3.841-2.337 4.686-4.566 4.934.359.309.679.92.679 1.855 0 1.338-.012 2.419-.012 2.748 0 .268.18.58.69.481A10.002 10.002 0 0 0 12 2Z"></path>
+                </svg>
+                קוד מקור
               </a>
-              <a
-                class="button button-secondary"
-                href="https://github.com/arieldaniely/otzariaAI#readme"
-                target="_blank"
-                rel="noreferrer"
-              >
-                לתיעוד המלא
-              </a>
+              <button class="button button-primary" type="button" data-open-download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+                הורדה
+              </button>
             </div>
-          </aside>
+          </div>
         </div>
-      </section>
+      </header>
 
-      <section class="section-shell reveal">
-        <div class="section-heading">
-          <p class="eyebrow">מתחת למכסה המנוע</p>
-          <h2>המערכת בנויה כך שתישאר שימושית גם בפרויקטים רציניים</h2>
-        </div>
-
-        <div class="stack-grid">
-          <article class="stack-card">
-            <h3>חיפוש</h3>
-            <p>FAISS, SQLite FTS, הרחבת מונחים, תיקון איות ונרמול עברית.</p>
-          </article>
-          <article class="stack-card">
-            <h3>נתונים</h3>
-            <p>תמיכה במסדי נתונים בפורמטים `db`, `sqlite` או `zip`, עם טעינה מקומית.</p>
-          </article>
-          <article class="stack-card">
-            <h3>ממשק</h3>
-            <p>Flask מקומי, מסך חיפוש ידידותי, עץ ספרייה וטעינת הקשר סביב תוצאה.</p>
-          </article>
-          <article class="stack-card">
-            <h3>מודלים</h3>
-            <p>טעינת embeddings מ־Hugging Face או מקובצי ZIP מקומיים.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="faq" class="section-shell reveal">
-        <div class="section-heading">
-          <p class="eyebrow">שאלות נפוצות</p>
-          <h2>כמה נקודות שכדאי לדעת לפני שמתחילים</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>האם OtzariaAI עובד אונליין?</summary>
-            <p>
-              לא. המערכת עצמה מיועדת לעבודה מקומית. חיבור אינטרנט נדרש רק כדי להוריד
-              מודל או מסד נתונים כשאין קובץ מקומי מוכן.
+      <main>
+        <section class="hero section-shell reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">חיפוש תורני מקומי. ברור. ישיר.</p>
+            <h1>
+              מגיעים אל הטקסט
+              <span>בלי להילחם בממשק.</span>
+            </h1>
+            <p class="hero-text">
+              OtzariaAI נותן חיפוש סמנטי, מסננים לפי ספרים, השלמה אוטומטית והקשר מלא.
+              ההורדות עצמן יושבות בחלון נפרד, כדי שהדף הראשי יישאר קצר ונוח.
             </p>
-          </details>
-          <details>
-            <summary>צריך לדעת לתכנת כדי להשתמש?</summary>
-            <p>
-              לא בהכרח. אפשר להשתמש בקובצי ההפצה מתוך Releases. אם רוצים להריץ מהקוד,
-              יש ב־README הוראות התקנה מסודרות.
-            </p>
-          </details>
-          <details>
-            <summary>מאיפה משיגים מסד נתונים?</summary>
-            <p>
-              הפרויקט תומך במסדי הנתונים של אוצריא ושל זית. קישורי ההורדה וההסבר על
-              הגדרת הנתיב מופיעים במאגר הראשי.
-            </p>
-          </details>
-          <details>
-            <summary>למה יש אתר נפרד מהמאגר הראשי?</summary>
-            <p>
-              כדי לאפשר דף שיווקי נקי ל־GitHub Pages בלי לערבב אותו עם קוד היישום,
-              ההפצות והקבצים המקומיים של הפרויקט הראשי.
-            </p>
-          </details>
-        </div>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      <div>
-        <strong>OtzariaAI</strong>
-        <p>חיפוש תורני חכם, מקומי ונגיש יותר.</p>
+            <div class="hero-actions">
+              <button class="button button-primary" type="button" data-open-download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+                פתחו חלון הורדות
+              </button>
+              <a class="button button-secondary" href="#start">איך מתחילים</a>
+            </div>
+
+            <ul class="hero-list" aria-label="עיקרי המוצר">
+              <li>חיפוש לפי משמעות ולא רק לפי התאמה מילולית</li>
+              <li>עבודה מקומית עם DB של אוצריא או של זית</li>
+              <li>מסך תוצאות עם הקשר מלא סביב כל קטע</li>
+            </ul>
+          </div>
+
+          <div class="hero-stage">
+            <div class="hero-frame">
+              <div class="hero-frame-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p class="hero-frame-label">המסך המרכזי</p>
+              <div class="comparison comparison-hero" style="--split: 100%">
+                <img
+                  class="comparison-base"
+                  src="assets/ui-home-live-dark.png"
+                  alt="המסך הראשי במצב כהה"
+                />
+                <div class="comparison-overlay">
+                  <img src="assets/ui-home-live.png" alt="המסך הראשי במצב בהיר" />
+                </div>
+                <div class="comparison-divider" aria-hidden="true">
+                  <span class="comparison-handle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 6-6 6 6 6"></path>
+                      <path d="M3 12h8"></path>
+                      <path d="m15 6 6 6-6 6"></path>
+                      <path d="M13 12h8"></path>
+                    </svg>
+                  </span>
+                </div>
+                <input
+                  class="comparison-range"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="100"
+                  aria-label="השוואה בין מצב בהיר לכהה במסך הראשי"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">יכולות</p>
+            <h2>מה מקבלים בפועל</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon">א</span>
+              <h3>חיפוש סמנטי והיברידי</h3>
+              <p>שילוב של חיפוש לפי משמעות עם התאמה טקסטואלית ישירה, כדי למצוא גם כשניסוח השאילתה חלקי.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon">ב</span>
+              <h3>סינון לפי ספרים</h3>
+              <p>מעבר מהיר בין ספרים, תחומים ועצים, בלי לעבוד קשה כדי לצמצם את התוצאות.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon">ג</span>
+              <h3>השלמה אוטומטית</h3>
+              <p>מגיעים למונח הנכון גם משאילתה חלקית או מאיות לא מדויק.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon">ד</span>
+              <h3>הקשר מלא</h3>
+              <p>לא רק תוצאה אחת, אלא קטע עם הקשר סביבו כדי להבין מהר אם זה מה שחיפשתם.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="screens" class="section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">מסכים</p>
+            <h2>שלושה מסכים שימושיים, בלי גלריה עמוסה</h2>
+          </div>
+
+          <div class="showcase-stack">
+            <article class="showcase-card">
+              <div class="showcase-copy">
+                <p class="showcase-label">השלמה אוטומטית</p>
+                <h3>כותבים פחות</h3>
+                <p>השלמה אוטומטית עוזרת להגיע לשמות, נושאים וקטעים גם כשלא זוכרים את הניסוח המדויק.</p>
+              </div>
+
+              <div class="comparison" style="--split: 100%">
+                <img
+                  class="comparison-base"
+                  src="assets/autocomplete-dark.png"
+                  alt="השלמה אוטומטית במצב כהה"
+                />
+                <div class="comparison-overlay">
+                  <img src="assets/autocomplete.png" alt="השלמה אוטומטית במצב בהיר" />
+                </div>
+                <div class="comparison-divider" aria-hidden="true">
+                  <span class="comparison-handle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 6-6 6 6 6"></path>
+                      <path d="M3 12h8"></path>
+                      <path d="m15 6 6 6-6 6"></path>
+                      <path d="M13 12h8"></path>
+                    </svg>
+                  </span>
+                </div>
+                <input
+                  class="comparison-range"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="100"
+                  aria-label="השוואה בין מצב בהיר לכהה במסך השלמה אוטומטית"
+                />
+              </div>
+            </article>
+
+            <article class="showcase-card">
+              <div class="showcase-copy">
+                <p class="showcase-label">סינון ספרים</p>
+                <h3>מצמצמים מהר</h3>
+                <p>מסננים לפי ספרים ותחומים בלי להעמיס על המסך ובלי ללכת לאיבוד בתוך ספרייה רחבה.</p>
+              </div>
+
+              <div class="comparison" style="--split: 100%">
+                <img
+                  class="comparison-base"
+                  src="assets/filtering-books-dark.png"
+                  alt="סינון ספרים במצב כהה"
+                />
+                <div class="comparison-overlay">
+                  <img src="assets/filtering-books.png" alt="סינון ספרים במצב בהיר" />
+                </div>
+                <div class="comparison-divider" aria-hidden="true">
+                  <span class="comparison-handle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 6-6 6 6 6"></path>
+                      <path d="M3 12h8"></path>
+                      <path d="m15 6 6 6-6 6"></path>
+                      <path d="M13 12h8"></path>
+                    </svg>
+                  </span>
+                </div>
+                <input
+                  class="comparison-range"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="100"
+                  aria-label="השוואה בין מצב בהיר לכהה במסך סינון ספרים"
+                />
+              </div>
+            </article>
+
+            <article class="showcase-card">
+              <div class="showcase-copy">
+                <p class="showcase-label">תוצאות והקשר</p>
+                <h3>מבינים איפה נחתנו</h3>
+                <p>התוצאות מוצגות עם הקשר סביב הקטע, כדי שיהיה ברור מהר אם זה המקור הרצוי.</p>
+              </div>
+
+              <div class="comparison" style="--split: 100%">
+                <img
+                  class="comparison-base"
+                  src="assets/search-results-dark.png"
+                  alt="תוצאות חיפוש במצב כהה"
+                />
+                <div class="comparison-overlay">
+                  <img src="assets/search-results.png" alt="תוצאות חיפוש במצב בהיר" />
+                </div>
+                <div class="comparison-divider" aria-hidden="true">
+                  <span class="comparison-handle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 6-6 6 6 6"></path>
+                      <path d="M3 12h8"></path>
+                      <path d="m15 6 6 6-6 6"></path>
+                      <path d="M13 12h8"></path>
+                    </svg>
+                  </span>
+                </div>
+                <input
+                  class="comparison-range"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="100"
+                  aria-label="השוואה בין מצב בהיר לכהה במסך תוצאות חיפוש"
+                />
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="start" class="section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">התחלה</p>
+            <h2>שלושה צעדים</h2>
+          </div>
+
+          <div class="workflow-grid">
+            <article class="workflow-card">
+              <span class="step-mark">1</span>
+              <h3>מורידים את התוכנה</h3>
+              <p>פותחים את חלון ההורדות ובוחרים את הקובץ למערכת ההפעלה שלכם.</p>
+            </article>
+            <article class="workflow-card">
+              <span class="step-mark">2</span>
+              <h3>מורידים DB</h3>
+              <p>באותו חלון בוחרים DB מלא של אוצריא או bundle של זית, לפי מה שמתאים לכם.</p>
+            </article>
+            <article class="workflow-card">
+              <span class="step-mark">3</span>
+              <h3>מגדירים נתיב ומתחילים</h3>
+              <p>לאחר ההגדרה הראשונית המערכת בונה אינדקס מקומי, ומשם החיפוש נהיה מיידי.</p>
+            </article>
+          </div>
+
+          <div class="download-strip">
+            <div>
+              <strong>הקבצים עצמם זמינים בחלון ההורדות</strong>
+              <p>התוכנה, DB של אוצריא, ו-bundle של זית.</p>
+            </div>
+            <button class="button button-primary" type="button" data-open-download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="m7 10 5 5 5-5"></path>
+                <path d="M5 21h14"></path>
+              </svg>
+              פתחו חלון הורדות
+            </button>
+          </div>
+        </section>
+
+        <section id="faq" class="section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">שאלות</p>
+            <h2>שאלות נפוצות</h2>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>האם ההורדות באתר ישירות לקבצים עצמם?</summary>
+              <p>כן. הכפתורים בחלון ההורדות מובילים ישירות לקבצי ההורדה בפועל.</p>
+            </details>
+            <details>
+              <summary>מה ההבדל בין DB של אוצריא לבין bundle של זית?</summary>
+              <p>אוצריא מגיע כקובץ DB מלא אחד. זית מגיע כ-bundle מפוצל לשני חלקים שצריך להוריד יחד.</p>
+            </details>
+            <details>
+              <summary>האם צריך לדעת לתכנת?</summary>
+              <p>לא. אפשר להוריד, להגדיר DB ולהתחיל לעבוד. מאגר הקוד נשאר זמין למי שרוצה להעמיק.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>OtzariaAI</strong>
+          <p>חיפוש תורני מקומי, בלי עומס מיותר.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/arieldaniely/otzariaAI" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-3.162 19.49c.5.092.684-.217.684-.482 0-.237-.009-.866-.014-1.7-2.782.604-3.369-1.342-3.369-1.342-.455-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.07 1.532 1.031 1.532 1.031.892 1.53 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.338-2.221-.253-4.555-1.11-4.555-4.942 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.027 1.592 1.027 2.683 0 3.841-2.337 4.686-4.566 4.934.359.309.679.92.679 1.855 0 1.338-.012 2.419-.012 2.748 0 .268.18.58.69.481A10.002 10.002 0 0 0 12 2Z"></path>
+            </svg>
+            מאגר הקוד
+          </a>
+          <button class="footer-button" type="button" data-open-download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12"></path>
+              <path d="m7 10 5 5 5-5"></path>
+              <path d="M5 21h14"></path>
+            </svg>
+            הורדה
+          </button>
+        </div>
+        <p class="footer-note">© <span id="year"></span> OtzariaAI</p>
+      </footer>
+    </div>
+
+    <div class="download-modal" hidden data-download-modal>
+      <div class="download-modal-backdrop" data-close-download></div>
+      <div
+        class="download-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="download-title"
+      >
+        <button class="download-close" type="button" aria-label="סגירת חלון ההורדות" data-close-download>
+          ×
+        </button>
+
+        <div class="download-dialog-header">
+          <div class="download-detected" data-detected-platform>מזהה מערכת הפעלה...</div>
+          <h2 id="download-title">הורדת OtzariaAI</h2>
+          <p class="download-dialog-copy" data-recommended-copy>
+            טוען את גרסת התוכנה העדכנית ואת קבצי מסד הנתונים הזמינים...
+          </p>
+        </div>
+
+        <section class="download-block">
+          <div class="download-block-head">
+            <h3>התוכנה</h3>
+            <p>גרסה עדכנית לפי GitHub Releases API.</p>
+          </div>
+          <div class="download-primary-row" data-primary-downloads>
+            <span class="loading-line"></span>
+          </div>
+          <div class="download-bundle-row" data-bundle-actions></div>
+          <div class="download-list-grid compact" data-app-downloads aria-live="polite"></div>
+        </section>
+
+        <section class="download-block">
+          <div class="download-block-head">
+            <h3>מסדי נתונים</h3>
+            <p>בחרו DB מלא של אוצריא או bundle של זית.</p>
+          </div>
+          <div class="download-db-grid" data-db-grid aria-live="polite">
+            <article class="download-db-card" data-otzaria-db></article>
+            <article class="download-db-card" data-zayit-db></article>
+          </div>
+        </section>
       </div>
-      <div class="footer-links">
-        <a href="https://github.com/arieldaniely/otzariaAI" target="_blank" rel="noreferrer">מאגר הקוד</a>
-        <a href="https://github.com/arieldaniely/otzariaAI/releases" target="_blank" rel="noreferrer">Releases</a>
-      </div>
-      <p class="footer-note">© <span id="year"></span> OtzariaAI</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
