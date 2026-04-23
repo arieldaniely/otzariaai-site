@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>OtzariaAI Site Stats</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #07090d;
+        --panel: #11151d;
+        --line: rgba(230, 210, 140, 0.18);
+        --text: #f5f0df;
+        --muted: #aaa392;
+        --gold: #e6d28c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      main {
+        width: min(100%, 820px);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 8vw, 4rem);
+        line-height: 1;
+      }
+
+      p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .stats-panel {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+      }
+
+      .badge-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        min-height: 460px;
+        border: 0;
+        background: #fff;
+      }
+
+      a {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 18px;
+        }
+
+        .badge-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>OtzariaAI stats</h1>
+      <p>
+        This unlinked page shows the public hit counter for the main website.
+        It is hidden by obscurity, not password protected.
+      </p>
+
+      <section class="stats-panel" aria-label="Visit statistics">
+        <div class="badge-row">
+          <span>Live counter details</span>
+          <a href="https://hits.sh/arieldaniely.github.io/otzariaai-site/" target="_blank" rel="noreferrer">
+            Open full stats
+          </a>
+        </div>
+        <iframe
+          title="OtzariaAI hit counter statistics"
+          src="https://hits.sh/arieldaniely.github.io/otzariaai-site/"
+          loading="lazy"
+        ></iframe>
+      </section>
+    </main>
+  </body>
+</html>

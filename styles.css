@@ -640,6 +640,15 @@ main {
   white-space: nowrap;
 }
 
+.site-hit-pixel {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .download-modal[hidden] {
   display: none;
 }
